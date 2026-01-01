@@ -1,49 +1,95 @@
-// Toggle mobile menu
+function sendMessage(event) {
+	event.preventDefault();
+
+	const responseMsg = document.getElementById("responseMessage");
+
+	const data = {
+		name: document.getElementById("name").value.trim(),
+		email: document.getElementById("email").value.trim(),
+		message: document.getElementById("message").value.trim()
+	};
+
+	fetch("/send-message", {
+		method: "POST",
+		headers: {
+			"Content-Type": "application/json"
+		},
+		body: JSON.stringify(data)
+	})
+	.then(res => {
+		if (!res.ok) {
+			return res.json();
+		}
+		return res.json().catch(() => res.text());
+	})
+	.then(response => {
+		responseMsg.style.color = "lightgreen";
+		responseMsg.textContent = "Message sent successfully!";
+		document.getElementById("contactForm").reset();
+	})
+	.catch(error => {
+		responseMsg.style.color = "red";
+		responseMsg.textContent = "Please enter valid details.";
+	});
+}
+
+/* =========================
+   MOBILE MENU TOGGLE
+========================= */
 function toggleMenu() {
-  document.getElementById("nav-links").classList.toggle("active");
+  const navLinks = document.getElementById("nav-links");
+  navLinks.classList.toggle("active");
 }
 
-// Smooth scroll to About section
+/* =========================
+   SMOOTH SCROLL (HOME → ABOUT)
+========================= */
 function scrollToAbout() {
-  document.getElementById("about")?.scrollIntoView({ behavior: "smooth" });
+  document.getElementById("about").scrollIntoView({
+    behavior: "smooth"
+  });
 }
-// ===== Smooth Scroll & Active Nav Highlight =====
-const sections = document.querySelectorAll("section");
-const navLinks = document.querySelectorAll(".nav-links a");
 
-window.addEventListener("scroll", () => {
-  let current = "";
-
-  sections.forEach((section) => {
-    const sectionTop = section.offsetTop - 80; // adjust for navbar height
-    const sectionHeight = section.clientHeight;
-    if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
-      current = section.getAttribute("id");
-    }
-  });
-
-  navLinks.forEach((link) => {
-    link.classList.remove("active");
-    if (link.getAttribute("href") === `#${current}`) {
-      link.classList.add("active");
-    }
-  });
-});
-
-// ===== Back to Top Button =====
-const backToTop = document.getElementById("backToTop");
+/* =========================
+   BACK TO TOP BUTTON
+========================= */
+const backToTopBtn = document.getElementById("backToTop");
 
 window.addEventListener("scroll", () => {
   if (window.scrollY > 300) {
-    backToTop.style.display = "block";
+    backToTopBtn.style.display = "block";
   } else {
-    backToTop.style.display = "none";
+    backToTopBtn.style.display = "none";
   }
 });
 
-backToTop.addEventListener("click", () => {
+backToTopBtn.addEventListener("click", () => {
   window.scrollTo({
     top: 0,
-    behavior: "smooth",
+    behavior: "smooth"
   });
 });
+
+/* =========================
+   PROJECT VIDEO MODAL
+========================= */
+function openVideo(videoFile) {   // ✅ FIX: accept filename
+  const modal = document.getElementById("videoModal");
+  const video = document.getElementById("projectVideo");
+  const source = document.getElementById("videoSource");
+
+  source.src = "/videos/" + videoFile; // ✅ FIX: dynamic video
+
+  video.load();      // REQUIRED
+  modal.style.display = "flex";
+  video.play();
+}
+
+function closeVideo() {
+  const modal = document.getElementById("videoModal");
+  const video = document.getElementById("projectVideo");
+
+  video.pause();
+  video.currentTime = 0;
+  modal.style.display = "none";
+}
