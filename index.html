@@ -3,186 +3,181 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio</title>
+  <title>Shubham Sherkar | Portfolio</title>
   <link rel="stylesheet" href="style.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Portfolio</title>
-  
 </head>
 <body>
 
   <!-- ===== Navbar ===== -->
   <nav>
-    <div class="logo">MyPortfolio</div>
+    <div class="logo">MY PORTFOLIO</div>
     <div class="menu-toggle" onclick="toggleMenu()">☰</div>
     <ul id="nav-links">
       <li><a href="#home">Home</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact Us</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
+
+  <!-- ===== Header Banner ===== -->
+  <header class="header-banner-wrapper">
+    <img src="images/header-banner.png"
+         alt="Shubham Sherkar | Full Stack Java Developer"
+         class="header-banner">
+  </header>
 
   <!-- ===== Home Section ===== -->
   <section id="home">
     <h1>Hello, I'm <span class="highlight">Shubham Sherkar</span></h1>
     <p>
-  A passionate software Engineer crafting modern websites with love and code
+      A Full Stack Java Developer building end-to-end web applications
+      using Java, Spring Boot, and applying AI/ML concepts to real-world problems.
     </p>
-    <button onclick="scrollToAbout()">Explore More</button>
+    <button onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">
+      Explore More
+    </button>
   </section>
- <!-- ===== About Section ===== -->
-<section id="about">
-  <div class="about-container">
-    <h2>About Me</h2>
 
-    <!-- Profile Picture -->
-    <div class="profile-pic">
-      <img src="Myphoto.png" alt="Profile Picture">
+  <!-- ===== About Section ===== -->
+  <section id="about">
+    <div class="about-container">
+      <h2>About Me</h2>
+
+      <div class="profile-pic">
+        <img src="images/Myphoto.png" alt="Shubham Sherkar">
+      </div>
+
+      <p class="about-intro">
+        Hi, I'm Shubham Sherkar, a Full Stack Java Developer passionate about
+        building reliable and scalable web applications.
+      </p>
+
+      <p>
+        My experience includes backend development with Java and Spring Boot,
+        frontend development using HTML, CSS, and JavaScript, and hands-on work
+        with AI/ML projects. I focus on writing clean code and learning through
+        building real-world systems.
+      </p>
     </div>
+  </section>
 
-    <p class="about-intro">
-      Hi, I'm Shubham Sherkar, a passionate web developer who loves building interactive and 
-      user-friendly web applications. My expertise lies in turning complex problems 
-      into simple, beautiful, and intuitive designs. 
-    </p>
-    <p>
-      I specialize in front-end and back-end development, and I enjoy experimenting 
-      with the latest tools and technologies to stay ahead in this ever-evolving industry. 
-      In my free time, I love exploring UI/UX trends and contributing to open-source projects.
-    </p>
-  </div>
-</section>
-
-    <!-- ===== Projects Section ===== -->
+  <!-- ===== Projects Section ===== -->
   <section id="projects">
     <div class="projects-container">
       <h2>My Projects</h2>
+
       <p class="project-intro">
-        Here are a few fictional projects I worked on to practice my skills in 
-        <strong>HTML ,  CSS, JavaScript And Also in Python and ML</strong>. Each project focuses on clean design 
-        and user-friendly interfaces.
+        Below are two major projects that demonstrate my skills in
+        <strong>Java, Spring Boot, Databases, and Python, Machine Learning</strong>.
       </p>
 
       <div class="project-grid">
+
         <!-- Project 1 -->
         <div class="project-card">
-          <img src="https://via.placeholder.com/400x250" alt="Project 1">
+          <img src="images/digital-wallet.png" alt="Digital Wallet System">
           <div class="project-info">
-            <h3>Portfolio Website</h3>
+            <h3>Digital Wallet System</h3>
             <p>
-              A responsive personal portfolio built with HTML, CSS & JS 
-              to showcase skills, projects, and contact info.
+              A full-stack Java application developed using Spring Boot and MySQL
+              that allows users to create accounts and securely transfer money
+              between accounts using RESTful APIs and transaction management.
             </p>
-            <a href="#">View Project</a>
+            <a href="javascript:void(0)"
+               onclick="openVideo('digital-wallet-demo.mp4')">
+               ▶ View Project
+            </a>
           </div>
         </div>
 
         <!-- Project 2 -->
         <div class="project-card">
-          <img src="https://via.placeholder.com/400x250" alt="Project 2">
+          <img src="images/bone-fracture.png" alt="Bone Fracture Detection System">
           <div class="project-info">
-            <h3>Notification Reminder System</h3>
+            <h3>Bone Fracture Imaging and Diagnosis System</h3>
             <p>
-             Used to streamline and enhance the task of managing reminder efficiently and keeping track of important events, deadlines, and appointments.
-(Used To Notify)
+              A machine learning–based medical imaging project that analyzes bone
+              fracture images and predicts fracture types using a cascading model,
+              improving accuracy and diagnosis time.
             </p>
-            <a href="#">View Project</a>
+            <a href="javascript:void(0)"
+               onclick="openVideo('bone-fracture-demo.mp4')">
+               ▶ View Project
+            </a>
           </div>
         </div>
 
-        <!-- Project 3 -->
-        <div class="project-card">
-          <img src="https://via.placeholder.com/400x250" alt="Project 3">
-          <div class="project-info">
-            <h3>Bone Fracture Imaging and Diagnosis System Using Cascading Model</h3>
-            <p>
-             The project is incorporate various type of bone fracture images and effectively predict the outcome through the use of cascading model.
-             The time and the prediction should be minimize and increase the accuracy.
-            </p>
-            <a href="#">View Project</a>
-          </div>
-        </div>
       </div>
     </div>
   </section>
+
   <!-- ===== Contact Section ===== -->
   <section id="contact">
     <div class="contact-container">
       <h2>Contact Me</h2>
       <p class="contact-intro">
-        Have a project idea, feedback, or just want to say hello?  
-        Fill out the form below or reach me via email and social links.
+        Have a project idea or want to connect? Feel free to reach out.
       </p>
 
       <div class="contact-content">
-        <!-- Contact Form -->
-        <form class="contact-form" onsubmit="sendMessage(event)">
-          <input type="text" id="name" placeholder="Your Name" required>
-          <input type="email" id="email" placeholder="Your Email" required>
-          <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
+
+        <form class="contact-form">
+          <input type="text" placeholder="Your Name" required>
+          <input type="email" placeholder="Your Email" required>
+          <textarea rows="5" placeholder="Your Message" required></textarea>
           <button type="submit">Send Message</button>
         </form>
+        <!-- ✅ PUT SCRIPT HERE (BOTTOM, BEFORE </body>) -->
+  <script>
+    document.getElementById("contactForm").addEventListener("submit", function(e) {
+      e.preventDefault();
 
-        <!-- Contact Info -->
+      fetch("http://localhost:8080/send-message", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: e.target.name.value,
+          email: e.target.email.value,
+          message: e.target.message.value
+        })
+      })
+      .then(res => res.text())
+      .then(data => alert(data))
+      .catch(err => alert("Failed to send"));
+    });
+  </script>
+        
         <div class="contact-info">
           <h3>Get in Touch</h3>
           <p><strong>Email:</strong> shubhamsherkar222@gmail.com</p>
-          <p><strong>Phone:</strong> 7058973658</p>
           <p><strong>Location:</strong> Pune, India</p>
 
           <div class="social-links">
-            <a href="#">🌐 GitHub</a>
-            <a href="#">💼 LinkedIn</a>
-            <a href="#">🐦 Twitter</a>
+            <a href="https://github.com/Sherkar" target="_blank">🌐 GitHub</a>
+            <a href="https://www.linkedin.com/in/shubham-sherkar-131807252/"
+               target="_blank">💼 LinkedIn</a>
           </div>
         </div>
-      </div>
-    <!-- ===== Contact Section ===== -->
-<section id="contact">
-  <div class="contact-container">
-    <h2>Contact Me</h2>
-    <p class="contact-intro">
-      Have a project idea, feedback, or just want to say hello?  
-      Fill out the form below or reach me via email, WhatsApp, or LinkedIn.
-    </p>
 
-    <div class="contact-content">
-      <!-- Contact Form -->
-      <form class="contact-form" onsubmit="sendMessage(event)">
-        <input type="text" id="name" placeholder="Your Name" required>
-        <input type="email" id="email" placeholder="Your Email" required>
-        <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
-        <button type="submit">Send Message</button>
-
-        <!-- Extra contact links below form -->
-        <div class="direct-links">
-          <p>📧 Email: <a href="mailto:johndoe@example.com">shubhamsherkar222@gmail.com</a></p>
-          <p>📱 WhatsApp: <a href="https://wa.me/919876543210" target="_blank">+91 7058973658</a></p>
-          <p>💼 LinkedIn: <a href="https://www.linkedin.com/in/johndoe" target="_blank">https://www.linkedin.co m/in/shubham-sherkar- 131807252</a></p>
-        </div>
-      </form>
-
-      <!-- Contact Info (optional, right side) -->
-      <div class="contact-info">
-        <h3>Other Details</h3>
-        <p><strong>Location:</strong> Pune, India</p>
       </div>
     </div>
-  </div>
-</section>
- </div>
   </section>
 
+  <!-- ===== Project Video Modal (ADDED) ===== -->
+  <div id="videoModal" class="video-modal">
+    <div class="video-content">
+      <span class="close-btn" onclick="closeVideo()">×</span>
 
-  <script src="script.js"></script>
-    <!-- Back to Top Button -->
-  <button id="backToTop">⬆</button>
+      <video id="projectVideo" controls preload="metadata">
+        <source id="videoSource" src="" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
 
-  <!-- Link JS -->
+  <!-- ===== Script ===== -->
   <script src="script.js"></script>
-</body>
-</html>
 
 </body>
 </html>
